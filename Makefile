@@ -22,7 +22,8 @@ test: all
 	for f in test/*.lua; do lua $$f; done
 
 install: all
-	mkdir -p $(LUA_SPATH)/uri/{file,urn}
+	mkdir -p $(LUA_SPATH)/uri/file
+	mkdir -p $(LUA_SPATH)/uri/urn
 	mkdir -p $(PREFIX)/share/man/man3
 	install --mode=644 uri.lua $(LUA_SPATH)/
 	for module in _login _relative _util data file ftp http https pop rtsp rtspu telnet urn; do \
